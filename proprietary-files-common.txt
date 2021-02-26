@@ -88,7 +88,6 @@ lib64/libsysenv_system.so
 
 bin/loghidlsysservice
 bin/AudioSetParam
-bin/auto_update
 bin/lbs_dbg
 bin/lcdc_screen_cap
 bin/memtester
