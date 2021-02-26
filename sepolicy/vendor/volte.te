@@ -1,0 +1,2 @@
+type volte_imsa2_socket, file_type;
+type volte_ut_socket, file_type;

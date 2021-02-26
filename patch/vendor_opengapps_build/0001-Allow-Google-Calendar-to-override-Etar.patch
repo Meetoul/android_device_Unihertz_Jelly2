@@ -1,0 +1,26 @@
+From 43cab1c60bccc73bd75114bc9f20cabdfbef05d8 Mon Sep 17 00:00:00 2001
+From: David Trpchevski <trpcevski.david@gmail.com>
+Date: Mon, 22 Jun 2020 11:19:21 +0200
+Subject: [PATCH] Allow Google Calendar to override Etar
+
+Etar is used in LineageOS 17.1+
+
+https://review.lineageos.org/c/LineageOS/cm_crowdin/+/276904
+
+Signed-off-by: David Trpchevski <trpcevski.david@gmail.com>
+---
+ modules/CalendarGooglePrebuilt/Android.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/modules/CalendarGooglePrebuilt/Android.mk b/modules/CalendarGooglePrebuilt/Android.mk
+index 4d05572..ad2c457 100644
+--- a/modules/CalendarGooglePrebuilt/Android.mk
++++ b/modules/CalendarGooglePrebuilt/Android.mk
+@@ -7,6 +7,6 @@ LOCAL_PACKAGE_NAME := com.google.android.calendar
+ LOCAL_OVERRIDES_PACKAGES := GoogleCalendarSyncAdapter
+ 
+ GAPPS_LOCAL_OVERRIDES_MIN_VARIANT :=
+-GAPPS_LOCAL_OVERRIDES_PACKAGES := Calendar
++GAPPS_LOCAL_OVERRIDES_PACKAGES := Calendar Etar
+ 
+ include $(BUILD_GAPPS_PREBUILT_APK)

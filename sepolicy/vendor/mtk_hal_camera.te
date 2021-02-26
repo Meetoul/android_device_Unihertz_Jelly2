@@ -1,0 +1,7 @@
+type mtk_hal_camera, domain, halserverdomain, halclientdomain, hal_allocator_client, hal_camera, hal_camera_server, hal_graphics_allocator_client, hal_pq_client, mtk_hal_bgs, mtk_hal_bgs_server;
+type mtk_hal_camera_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(mtk_hal_camera);
+hwbinder_use(mtk_hal_camera);
+
+allow mtk_hal_camera proc_agold:file {read getattr open};

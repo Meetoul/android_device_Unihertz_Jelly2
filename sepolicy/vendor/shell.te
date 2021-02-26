@@ -1,0 +1,2 @@
+allow shell extmodule_exec:file {ioctl read getattr lock map execute execute_no_trans open};
+allow shell proc_agold:file {read};

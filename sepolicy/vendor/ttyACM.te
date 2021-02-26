@@ -1,0 +1,1 @@
+type ttyACM_device, dev_type;

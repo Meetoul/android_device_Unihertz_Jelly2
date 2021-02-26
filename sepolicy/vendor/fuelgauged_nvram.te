@@ -1,0 +1,8 @@
+type fuelgauged_nvram, domain;
+type fuelgauged_nvram_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(fuelgauged_nvram);
+
+allow fuelgauged_nvram sysfs_dt_firmware_android:dir {read search open};
+allow fuelgauged_nvram sysfs_dt_firmware_android:file {read getattr open};
+allow fuelgauged_nvram metadata_file:dir {search};

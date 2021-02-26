@@ -1,0 +1,27 @@
+From 926741ab6bba20f287714847bf977b3127797cbd Mon Sep 17 00:00:00 2001
+From: Matthias Leitl <a.dead.trousers@gmail.com>
+Date: Sat, 28 Nov 2020 11:08:33 +0100
+Subject: [PATCH] Change vendor in bt_did.conf
+
+Change-Id: Ie1053c409766f3ec4935a88532b829dd34f3be57
+---
+ conf/bt_did.conf | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/conf/bt_did.conf b/conf/bt_did.conf
+index 631cc6df3..942a854f5 100644
+--- a/conf/bt_did.conf
++++ b/conf/bt_did.conf
+@@ -9,6 +9,9 @@ primaryRecord = true
+ # 0x000F = Broadcom Corporation (default)
+ #vendorId = 0x000F
+ 
++# Set right vendorId
++vendorId = 0x0046
++
+ # Vendor ID Source
+ # 0x0001 = Bluetooth SIG assigned Device ID Vendor ID value (default)
+ # 0x0002 = USB Implementer's Forum assigned Device ID Vendor ID value
+-- 
+2.25.1
+

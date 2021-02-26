@@ -1,0 +1,7 @@
+type vtservice, domain, binderservicedomain, coredomain, halclientdomain, hal_allocator_client, hal_codec2_client, hal_graphics_allocator_client, hal_omx_client, hal_pq_client;
+type vtservice_hidl, domain, netdomain, mtkimsapdomain;
+type vtservice_exec, file_type, exec_type, system_file_type;
+type vtservice_hidl_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(vtservice);
+init_daemon_domain(vtservice_hidl);

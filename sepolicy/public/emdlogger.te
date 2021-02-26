@@ -1,0 +1,5 @@
+type emdlogger, domain, binderservicedomain, coredomain;
+type ctl_emdlogger1_prop, property_type;
+type ctl_emdlogger2_prop, property_type;
+type ctl_emdlogger3_prop, property_type;
+type init_svc_emdlogger1_prop, property_type;

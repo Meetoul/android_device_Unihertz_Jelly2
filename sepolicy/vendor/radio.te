@@ -1,0 +1,2 @@
+allow radio agold_service:service_manager {find};
+allow radio proc_agold:file {read getattr open};

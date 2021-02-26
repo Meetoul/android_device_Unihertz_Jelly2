@@ -1,0 +1,1 @@
+allow system_server sysfs_agold:file {ioctl read write getattr open};

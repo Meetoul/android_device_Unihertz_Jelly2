@@ -1,0 +1,10 @@
+type ccci_mdinit, domain, mtkimsapdomain, data_between_core_and_vendor_violators;
+type ccci_mdinit_exec, file_type, exec_type, vendor_file_type;
+
+init_daemon_domain(ccci_mdinit);
+
+allow ccci_mdinit sysfs_dt_firmware_android:dir {read search open};
+allow ccci_mdinit sysfs_dt_firmware_android:file {read getattr open};
+allow ccci_mdinit mdlog_data_file:dir {ioctl read write create getattr setattr lock relabelto rename add_name remove_name reparent search rmdir open};
+allow ccci_mdinit mdlog_data_file:fifo_file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow ccci_mdinit mdlog_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};

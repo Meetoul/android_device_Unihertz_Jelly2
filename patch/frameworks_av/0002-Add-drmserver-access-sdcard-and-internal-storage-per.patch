@@ -1,0 +1,25 @@
+From e805786430c48841dc8a3ff98da165c79e24cac4 Mon Sep 17 00:00:00 2001
+From: Matthias Leitl <a.dead.trousers@gmail.com>
+Date: Sat, 28 Nov 2020 11:22:06 +0100
+Subject: [PATCH] Add drmserver access sdcard and internal storage permission
+
+Change-Id: I7caf72d6f106b773c03fd16d891a59e026e4f022
+---
+ drm/drmserver/drmserver.rc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drm/drmserver/drmserver.rc b/drm/drmserver/drmserver.rc
+index de46fb92e..5d9442c4b 100644
+--- a/drm/drmserver/drmserver.rc
++++ b/drm/drmserver/drmserver.rc
+@@ -1,5 +1,6 @@
+ service drm /system/bin/drmserver
+     class main
+     user drm
+-    group drm system inet drmrpc readproc
++    # Add drmserver access sdcard and internal storage permission
++    group drm system inet drmrpc readproc sdcard_rw media_rw
+     writepid /dev/cpuset/foreground/tasks
+-- 
+2.25.1
+

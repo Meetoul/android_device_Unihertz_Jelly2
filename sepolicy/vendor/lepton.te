@@ -1,0 +1,26 @@
+type lepton_device, dev_type;
+type lepton, domain, binderservicedomain, coredomain;
+type lepton_exec, file_type, exec_type, system_file_type;
+type lepton_service, service_manager_type;
+
+init_daemon_domain(lepton);
+add_service(lepton,lepton_service);
+binder_use(lepton);
+
+allow lepton init:unix_stream_socket {connectto};
+allow lepton lepton_device:chr_file {ioctl read write open};
+allow lepton lepton_device:dir {read write add_name open};
+allow lepton lepton_device:file {read write create open};
+allow lepton media_rw_data_file:dir {read write add_name search open};
+allow lepton media_rw_data_file:file {read write create getattr setattr open};
+allow lepton mnt_user_file:dir {search};
+allow lepton mnt_user_file:lnk_file {read write};
+allow lepton property_socket:sock_file {write};
+allow lepton sdcardfs:dir {write add_name search};
+allow lepton sdcardfs:file {read write create getattr open};
+allow lepton storage_file:lnk_file {read write};
+allow lepton sysfs_leds:dir {search};
+allow lepton system_data_file:dir {write create add_name};
+allow lepton system_data_file:file {read open};
+allow lepton system_file:file {execute_no_trans};
+allow lepton tmpfs:lnk_file {read};

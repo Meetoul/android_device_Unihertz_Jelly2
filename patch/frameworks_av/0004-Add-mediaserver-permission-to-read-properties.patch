@@ -1,0 +1,25 @@
+From d3c40dc5e167223fc5cd32a01570c4617e3c7932 Mon Sep 17 00:00:00 2001
+From: Matthias Leitl <a.dead.trousers@gmail.com>
+Date: Sat, 28 Nov 2020 11:26:54 +0100
+Subject: [PATCH] Add mediaserver permission to read properties
+
+Change-Id: I31a8c8b83ee80703aba071f7f235997b071ac38d
+---
+ media/mediaserver/mediaserver.rc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/media/mediaserver/mediaserver.rc b/media/mediaserver/mediaserver.rc
+index f6c325c98..c7c7ce063 100644
+--- a/media/mediaserver/mediaserver.rc
++++ b/media/mediaserver/mediaserver.rc
+@@ -1,6 +1,6 @@
+ service media /system/bin/mediaserver
+     class main
+     user media
+-    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm
++    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm readproc
+     ioprio rt 4
+     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
+-- 
+2.25.1
+

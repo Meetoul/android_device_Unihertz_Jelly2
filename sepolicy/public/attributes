@@ -1,0 +1,14 @@
+attribute mtk_hal_apm;
+attribute mtk_hal_apm_client;
+attribute mtk_hal_apm_server;
+attribute mtk_hal_dmc;
+attribute mtk_hal_dmc_client;
+attribute mtk_hal_dmc_server;
+attribute mtk_hal_lbs;
+attribute mtk_hal_lbs_client;
+attribute mtk_hal_lbs_server;
+attribute mtk_hal_md_dbfilter;
+attribute mtk_hal_md_dbfilter_client;
+attribute hal_gpu;
+attribute hal_gpu_client;
+attribute hal_gpu_server;

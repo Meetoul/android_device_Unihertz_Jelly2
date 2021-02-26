@@ -1,0 +1,1 @@
+type kpoc_charger, domain, coredomain, halclientdomain, hal_health_client, hal_light_client;

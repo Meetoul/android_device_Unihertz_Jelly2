@@ -1,0 +1,39 @@
+From da764b2424192bdd99ff1e4e28e1daea7ebb75b7 Mon Sep 17 00:00:00 2001
+From: Matthias Leitl <a.dead.trousers@gmail.com>
+Date: Sat, 28 Nov 2020 11:19:15 +0100
+Subject: [PATCH] restart AudioServer to sync with AudioService
+
+Change-Id: Ia6b68c4db4e94252cb0d8d39ed9745adeba069fd
+---
+ media/audioserver/audioserver.rc | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/media/audioserver/audioserver.rc b/media/audioserver/audioserver.rc
+index dfb1a3fb9..7dba4b9a1 100644
+--- a/media/audioserver/audioserver.rc
++++ b/media/audioserver/audioserver.rc
+@@ -2,16 +2,18 @@ service audioserver /system/bin/audioserver
+     class core
+     user audioserver
+     # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+-    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct wakelock
++    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct wakelock system sdcard_rw
+     capabilities BLOCK_SUSPEND
+     ioprio rt 4
+     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
+     onrestart restart vendor.audio-hal-2-0
+-    onrestart restart vendor.audio-hal-4-0-msd
++    #onrestart restart vendor.audio-hal-4-0-msd
+     # Keep the original service name for backward compatibility when upgrading
+     # O-MR1 devices with framework-only.
+     onrestart restart audio-hal-2-0
+-
++#[ALPS04217601] restart AudioServer to sync with AudioService
++on property:vold.decrypt=trigger_reset_main
++    restart audioserver
+ on property:vts.native_server.on=1
+     stop audioserver
+ on property:vts.native_server.on=0
+-- 
+2.25.1
+

@@ -1,0 +1,5 @@
+attribute mtkimsapdomain;
+attribute hal_pq_client;
+attribute mtk_hal_bgs;
+attribute mtk_hal_bgs_server;
+attribute hal_mtkcodecservice_client;

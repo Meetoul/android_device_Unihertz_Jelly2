@@ -1,0 +1,4 @@
+allow platform_app agold_service:service_manager {find};
+allow platform_app proc_agold:file {read getattr open};
+allow platform_app sysfs_agold:file {read getattr open};
+allow platform_app lepton_service:service_manager {find};
