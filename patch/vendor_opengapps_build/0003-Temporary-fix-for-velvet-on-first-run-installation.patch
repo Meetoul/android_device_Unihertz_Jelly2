@@ -1,0 +1,24 @@
+From d644ba15fca0cce2f09a9284f24a03b6e4fa9e22 Mon Sep 17 00:00:00 2001
+From: Matthias Leitl <a.dead.trousers@gmail.com>
+Date: Sat, 27 Feb 2021 12:45:21 +0100
+Subject: [PATCH] Temporary fix for velvet on first run installation
+
+---
+ modules/Velvet/Android.mk | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/modules/Velvet/Android.mk b/modules/Velvet/Android.mk
+index ae7e06f..c27bbaf 100644
+--- a/modules/Velvet/Android.mk
++++ b/modules/Velvet/Android.mk
+@@ -4,6 +4,7 @@ include $(GAPPS_CLEAR_VARS)
+ LOCAL_MODULE := Velvet
+ LOCAL_PACKAGE_NAME := com.google.android.googlequicksearchbox
+ LOCAL_PRIVILEGED_MODULE := true
++LOCAL_UNCOMPRESS_DEX := false
+ 
+ LOCAL_OVERRIDES_PACKAGES := QuickSearchBox
+ 
+-- 
+2.25.1
+
