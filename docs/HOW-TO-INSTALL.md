@@ -45,6 +45,8 @@ source ~/.profile
 
 Download [the latest version of adb and fastboot](https://dl.google.com/android/repository/platform-tools-latest-windows.zip) to a directory of your choice and extract the archive. 
 
+Note: I've had reports that under Windows adb/fastboot might not recognize the phone while in TWRP. For now I don't know whats causing this. So if that happends to you try using linux instead.
+
 ## Unlocking
 
 To be able to install anything on the Unihertz Atom L or XL we first need to unlock the bootloader.
@@ -59,7 +61,7 @@ To be able to install anything on the Unihertz Atom L or XL we first need to unl
 
 ## Disabling AVB (Android Verified Boot)
 
-To get LineageOS to boot proberly we also need to disable AV. Otherwise the bootloader will check the ROM with the wrong authorization keys and prevent the loading.
+To get LineageOS to boot proberly we also need to disable AVB. Otherwise the bootloader will check the ROM with the wrong authorization keys and prevent the loading.
 
 - [Atom L Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L/releases)
 - [Atom XL Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases)
@@ -94,9 +96,23 @@ To get LineageOS to boot proberly we also need to disable AV. Otherwise the boot
 4. In TWRP select `Wipe > Advanced Wipe`.
 5. Tick `Dalvik / ART Cache`, `Cache`, `Data`, `Internal Storage`. 
 6. Swipe the slider on the bottom to the right to confirm. (**THIS WILL WIPE ALL DATA!**)
-7. Go back to the home screen and select `Advanced > ADB Sideload`.
-8. Swipe the slider on the bottom to the right to confirm.
-9. Run `adb sideload lineage-17.1-XXX-UNOFFICIAL-YYY.zip` from your PC.
-10. Wait for the process to finish. The recovery might prompt something about verification failure, just ignore it and continue anyway.
-11. (Optional) At this point, you can then sideload the latest Magisk and/or OpenGAPPS Nano at your will. Note that the size of the system partition might only be enough for the "nano" variant of OpenGAPPS. If installing Magisk / OpenGAPPS fails, you can try rebooting into recovery again in advanced menus, then try installing them again.
-12. Select `Reboot System` to reboot into LineageOS and enjoy. Note that Magisk might cause your device to boot loop once or twice but it will eventually boot.
+
+### Using sideload method
+
+1. From home screen select `Advanced > ADB Sideload`.
+2. Swipe the slider on the bottom to the right to confirm.
+3. Run `adb sideload lineage-17.1-XXX-UNOFFICIAL-YYY.zip` from your PC.
+4. Wait for the process to finish. The recovery might prompt something about verification failure, just ignore it and continue anyway.
+
+### Using SD card
+
+1. Run `adb push lineage-17.1-XXX-UNOFFICIAL-YYY.zip /external_sd` on your PC or transfer the file beforehand onto your SD card.
+2. From home screen select `Install`.
+3. Use `Select Storage` to switch to your SD card.
+4. Select the previously transfered file.
+5. Swipe the slider on the bottom to the right to confirm.
+
+### Finishing up
+
+1. (Optional) At this point, you can then install the latest Magisk and/or OpenGAPPS Nano at your will. Note that the size of the system partition might only be enough for the "nano" variant of OpenGAPPS. If installing Magisk / OpenGAPPS fails, you can try rebooting into recovery again in advanced menus, then try installing them again.
+2. Select `Reboot System` to reboot into LineageOS and enjoy. Note that Magisk might cause your device to boot loop once or twice but it will eventually boot.
