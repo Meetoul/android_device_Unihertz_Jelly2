@@ -1,0 +1,6 @@
+type sysfs_portmode, fs_type, sysfs_type;
+type sysfs_android0_usb, fs_type, sysfs_type;
+type sysfs_musb_hdrc, fs_type, sysfs_type;
+type sysfs_battery_warning, fs_type, sysfs_type;
+type sysfs_mt_usb, fs_type, sysfs_type;
+type sysfs_mcupm, fs_type, sysfs_type;

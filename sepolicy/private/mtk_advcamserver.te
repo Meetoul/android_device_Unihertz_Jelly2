@@ -1,0 +1,11 @@
+type mtk_advcamserver_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(mtk_advcamserver);
+binder_use(mtk_advcamserver);
+hwbinder_use(mtk_advcamserver);
+binder_call(mtk_advcamserver,mtk_advcamserver);
+binder_call(mtk_advcamserver,binderservicedomain);
+binder_call(mtk_advcamserver,appdomain);
+
+allow mtk_advcamserver mtk_advcamserver_service:service_manager {add find};
+allow mtk_advcamserver hwservicemanager_prop:file {read getattr map open};

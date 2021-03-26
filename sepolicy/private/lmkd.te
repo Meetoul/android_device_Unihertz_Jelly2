@@ -1,0 +1,1 @@
+allow lmkd proc_vmstat:file {ioctl read getattr lock map open};

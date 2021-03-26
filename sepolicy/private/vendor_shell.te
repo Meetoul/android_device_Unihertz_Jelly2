@@ -1,0 +1,4 @@
+allow vendor_shell init:unix_stream_socket {connectto};
+allow vendor_shell netflix_bsp_rev_prop:file {read getattr map open};
+allow vendor_shell netflix_bsp_rev_prop:property_service {set};
+allow vendor_shell property_socket:sock_file {write};

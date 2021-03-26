@@ -1,0 +1,2 @@
+allow dnsmasq netd:process {sigchld};
+allow dnsmasq netd:file {read};

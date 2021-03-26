@@ -1,0 +1,3 @@
+type mtk_cta_set_prop, property_type, extended_core_property_type;
+type mtk_rsc_sys_prop, property_type, extended_core_property_type;
+type mtk_permission_control_prop, property_type, extended_core_property_type;

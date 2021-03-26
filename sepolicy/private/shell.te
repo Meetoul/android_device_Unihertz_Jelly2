@@ -1,0 +1,2 @@
+allow shell debuglog_data_file:dir {ioctl read getattr lock search open};
+allow shell debuglog_data_file:file {ioctl read getattr lock map open};

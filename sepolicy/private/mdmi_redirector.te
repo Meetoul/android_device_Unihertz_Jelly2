@@ -1,0 +1,12 @@
+type mdmi_redirector, domain, netdomain, coredomain, halclientdomain, mtk_hal_dmc_client;
+type mdmi_redirector_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(mdmi_redirector);
+
+allow mdmi_redirector fwmarkd_socket:sock_file {write};
+allow mdmi_redirector self:tcp_socket {ioctl read write create getattr setattr lock append map bind connect listen accept getopt setopt shutdown};
+allow mdmi_redirector self:udp_socket {ioctl read write create getattr setattr lock append map bind connect listen accept getopt setopt shutdown};
+allow mdmi_redirector node:tcp_socket {node_bind};
+allow mdmi_redirector port:tcp_socket {name_bind};
+allow mdmi_redirector netd:unix_stream_socket {connectto};
+allow mdmi_redirector mtk_dmc_prop:file {read getattr map open};

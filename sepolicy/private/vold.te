@@ -1,0 +1,5 @@
+allow vold platform_app:fd {use};
+allow vold block_device:file {create};
+allow vold mtd_device:dir {search};
+allow vold mtd_device:chr_file {read write open};
+allow vold kernel:system {module_request};

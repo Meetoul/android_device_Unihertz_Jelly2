@@ -1,0 +1,31 @@
+type kpoc_charger_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(kpoc_charger);
+
+allow kpoc_charger block_device:dir {search};
+allow kpoc_charger graphics_device:dir {search};
+allow kpoc_charger graphics_device:chr_file {ioctl read write getattr lock append map open};
+allow kpoc_charger input_device:dir {read search open};
+allow kpoc_charger input_device:chr_file {ioctl read write open};
+allow kpoc_charger property_socket:sock_file {write};
+allow kpoc_charger self:capability {sys_nice};
+allow kpoc_charger self:capability {net_admin};
+allow kpoc_charger self:netlink_kobject_uevent_socket {read create bind setopt};
+allow kpoc_charger sysfs:dir {ioctl read getattr lock search open};
+allow kpoc_charger kmsg_device:chr_file {write open};
+allow kpoc_charger rtc_device:chr_file {read write open};
+allow kpoc_charger init:unix_stream_socket {connectto};
+allow kpoc_charger self:capability {sys_boot};
+allow kpoc_charger mtd_device:dir {search};
+allow kpoc_charger mtd_device:chr_file {read};
+allow kpoc_charger mtd_device:chr_file {read open};
+allow kpoc_charger rootfs:file {ioctl read getattr lock map open};
+allow kpoc_charger sysfs_leds:dir {ioctl read getattr lock search open};
+allow kpoc_charger sysfs_batteryinfo:dir {ioctl read getattr lock search open};
+allow kpoc_charger sysfs_power:file {read write getattr open};
+allow kpoc_charger sysfs_dt_firmware_android:dir {ioctl read getattr lock search open};
+allow kpoc_charger sysfs_dt_firmware_android:file {ioctl read getattr lock map open};
+allow kpoc_charger sysfs_dt_firmware_android:lnk_file {ioctl read getattr lock map open};
+allow kpoc_charger sysfs_dt_firmware_android:dir {read search open};
+allow kpoc_charger proc_cmdline:file {ioctl read getattr lock map open};
+allow kpoc_charger sysfs_battery_warning:file {ioctl read getattr lock map open};

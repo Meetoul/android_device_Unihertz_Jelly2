@@ -123,6 +123,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
     android.hardware.vibrator@1.0 \
     android.hardware.vibrator@1.3
+    
+# Additional tools
+PRODUCT_PACKAGES += \
+    unpack_bootimg    
 
 # Keylayouts
 PRODUCT_COPY_FILES += \

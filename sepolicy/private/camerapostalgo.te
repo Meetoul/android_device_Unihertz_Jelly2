@@ -1,0 +1,22 @@
+type camerapostalgo_exec, file_type, exec_type, system_file_type;
+type camerapostalgo_service, service_manager_type;
+type ctl_campostalgo_prop, property_type, extended_core_property_type;
+
+init_daemon_domain(camerapostalgo);
+binder_use(camerapostalgo);
+hwbinder_use(camerapostalgo);
+binder_call(camerapostalgo,platform_app);
+binder_call(camerapostalgo,surfaceflinger);
+
+allow camerapostalgo hwservicemanager_prop:file {read getattr map open};
+allow camerapostalgo camerapostalgo_service:service_manager {add find};
+allow camerapostalgo gpu_device:dir {search};
+allow camerapostalgo gpu_device:chr_file {ioctl read write getattr lock append map open};
+allow camerapostalgo ion_device:chr_file {ioctl read getattr lock map open};
+allow camerapostalgo sdcardfs:dir {search};
+allow camerapostalgo mnt_user_file:dir {search};
+allow camerapostalgo storage_file:lnk_file {ioctl read getattr lock map open};
+allow camerapostalgo mnt_user_file:lnk_file {ioctl read getattr lock map open};
+allow camerapostalgo sdcardfs:file {ioctl read getattr lock map open};
+allow camerapostalgo media_rw_data_file:dir {ioctl read write getattr lock add_name remove_name search open};
+allow camerapostalgo media_rw_data_file:file {ioctl read write getattr lock append map open};

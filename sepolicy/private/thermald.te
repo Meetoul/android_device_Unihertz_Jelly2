@@ -1,0 +1,7 @@
+type thermald_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(thermald);
+binder_use(thermald);
+
+allow thermald system_server:binder {call};
+allow thermald activity_service:service_manager {find};

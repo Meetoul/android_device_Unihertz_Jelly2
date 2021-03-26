@@ -1,0 +1,42 @@
+ctl.android.hardware.dumpstate                                                                      u:object_r:ctl_dumpstate_prop:s0
+init.svc.aee_aedv                                                                                   u:object_r:init_svc_aee_aedv_prop:s0
+ctl.atci_service                                                                                    u:object_r:ctl_atci_service_prop:s0
+persist.vendor.radio.port_index                                                                     u:object_r:mtk_atci_sys_prop:s0
+vendor.ril.atci.flightmode                                                                          u:object_r:mtk_atci_sys_prop:s0
+persist.vendor.service.atci.autostart                                                               u:object_r:mtk_atci_sys_prop:s0
+persist.vendor.service.atci.usermode                                                                u:object_r:mtk_atci_sys_prop:s0
+ctl.atcid-daemon-u                                                                                  u:object_r:ctl_atcid-daemon-u_prop:s0
+ctl.emdlogger1                                                                                      u:object_r:ctl_emdlogger1_prop:s0
+init.svc.emdlogger1                                                                                 u:object_r:init_svc_emdlogger1_prop:s0
+ctl.emdlogger2                                                                                      u:object_r:ctl_emdlogger2_prop:s0
+ctl.emdlogger3                                                                                      u:object_r:ctl_emdlogger3_prop:s0
+ro.lmk.psi_partial_stall_ms                                                                         u:object_r:exported3_default_prop:s0 exact int
+ro.lmk.psi_complete_stall_ms                                                                        u:object_r:exported3_default_prop:s0 exact int
+ro.lmk.thrashing_limit                                                                              u:object_r:exported3_default_prop:s0 exact int
+ro.lmk.thrashing_limit_decay                                                                        u:object_r:exported3_default_prop:s0 exact int
+ro.lmk.thrashing_min_score_adj                                                                      u:object_r:exported3_default_prop:s0 exact int
+ro.lmk.use_new_strategy                                                                             u:object_r:exported3_default_prop:s0 exact bool
+ro.lmk.log_stats                                                                                    u:object_r:exported3_default_prop:s0 exact bool
+ro.lmk.use_psi                                                                                      u:object_r:exported3_default_prop:s0 exact bool
+ro.system.build.fingerprint                                                                         u:object_r:exported_fingerprint_prop:s0 exact string
+ctl.mdlogger                                                                                        u:object_r:ctl_mdlogger_prop:s0
+ro.vendor.mtk_cta_set                                                                               u:object_r:mtk_cta_set_prop:s0
+ro.vendor.mtk_dmc_support                                                                           u:object_r:mtk_dmc_prop:s0
+ro.vendor.mtk_mapi_support                                                                          u:object_r:mtk_dmc_prop:s0
+vendor.dmc.apm.active                                                                               u:object_r:mtk_dmc_prop:s0
+persist.vendor.sys.aal.                                                                             u:object_r:mtk_aal_prop:s0
+ro.sys.current_rsc_path                                                                             u:object_r:mtk_rsc_sys_prop:s0
+ro.product.current_rsc_path                                                                         u:object_r:mtk_rsc_sys_prop:s0
+init.svc.md_monitor                                                                                 u:object_r:init_svc_md_monitor_prop:s0
+persist.vendor.ter                                                                                  u:object_r:terservice_prop:s0
+vendor.ter.service                                                                                  u:object_r:terservice_prop:s0
+ctl.restart$camerapostalgo                                                                          u:object_r:ctl_campostalgo_prop:s0
+ctl.start$camerapostalgo                                                                            u:object_r:ctl_campostalgo_prop:s0
+ctl.stop$camerapostalgo                                                                             u:object_r:ctl_campostalgo_prop:s0
+vendor.com.agui.networkmanager.policy.set                                                           u:object_r:agui_network_manager_prop:s0
+vendor.moms.permission.control.policy.set                                                           u:object_r:mtk_permission_control_prop:s0
+ro.netflix.bsp_rev                                                                                  u:object_r:netflix_bsp_rev_prop:s0
+persist.adb.nonblocking_ffs                                                                         u:object_r:exported_default_prop:s0 exact int
+init.svc.pkm_service                                                                                u:object_r:mtk_pkm_init_prop:s0
+ro.audio.usb.period_us                                                                              u:object_r:exported_default_prop:s0 exact int
+persist.sys.sw.dbg.en                                                                               u:object_r:ctl_default_prop:s0

@@ -1,0 +1,31 @@
+type mdlogger_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(mdlogger);
+binder_use(mdlogger);
+
+allow mdlogger platform_app:unix_stream_socket {connectto};
+allow mdlogger shell_exec:file {ioctl read getattr lock map execute execute_no_trans open};
+allow mdlogger system_file:file {getattr map execute execute_no_trans};
+allow mdlogger zygote_exec:file {ioctl read getattr lock map open};
+allow mdlogger node:tcp_socket {node_bind};
+allow mdlogger port:tcp_socket {name_bind};
+allow mdlogger self:tcp_socket {ioctl read write create getattr setattr lock append map bind connect listen accept getopt setopt shutdown};
+allow mdlogger vfat:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow mdlogger vfat:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow mdlogger tmpfs:lnk_file {read};
+allow mdlogger storage_file:lnk_file {ioctl read write getattr lock append map open};
+allow mdlogger mnt_user_file:dir {search};
+allow mdlogger mnt_user_file:lnk_file {ioctl read write getattr lock append map open};
+allow mdlogger sdcard_type:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow mdlogger sdcard_type:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow mdlogger media_rw_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow mdlogger media_rw_data_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow mdlogger storage_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow mdlogger storage_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow mdlogger file_contexts_file:file {read getattr open};
+allow mdlogger system_file:dir {read};
+allow mdlogger mddb_filter_data_file:dir {ioctl read getattr lock search open};
+allow mdlogger mddb_filter_data_file:file {ioctl read getattr lock map open};
+allow mdlogger debuglog_data_file:dir {ioctl read write create getattr setattr lock relabelto rename add_name remove_name reparent search rmdir open};
+allow mdlogger debuglog_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow mdlogger system_data_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};

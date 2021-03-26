@@ -1,0 +1,32 @@
+type mtkbootanimation_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(mtkbootanimation);
+binder_use(mtkbootanimation);
+binder_call(mtkbootanimation,audioserver)
+binder_call(mtkbootanimation,surfaceflinger)
+hwbinder_use(mtkbootanimation);
+
+allow mtkbootanimation audio_device:chr_file {ioctl read write getattr lock append map open};
+allow mtkbootanimation audio_device:dir {ioctl read getattr lock search open};
+allow mtkbootanimation audioserver_service:service_manager {find};
+allow mtkbootanimation cgroup:dir {ioctl read getattr lock search open};
+allow mtkbootanimation cgroup:file {ioctl read getattr lock map open};
+allow mtkbootanimation cgroup:lnk_file {ioctl read getattr lock map open};
+allow mtkbootanimation debug_prop:property_service {set};
+allow mtkbootanimation gpu_device:chr_file {ioctl read write getattr lock append map open};
+allow mtkbootanimation gpu_device:dir {search};
+allow mtkbootanimation hal_graphics_allocator:fd {use};
+allow mtkbootanimation hal_graphics_composer:fd {use};
+allow mtkbootanimation init:unix_stream_socket {connectto};
+allow mtkbootanimation ion_device:chr_file {ioctl read write getattr lock append map open};
+allow mtkbootanimation mediaserver:binder {call transfer};
+allow mtkbootanimation mediaserver_service:service_manager {find};
+allow mtkbootanimation oemfs:dir {search};
+allow mtkbootanimation oemfs:file {ioctl read getattr lock map open};
+allow mtkbootanimation proc_meminfo:file {ioctl read getattr lock map open};
+allow mtkbootanimation property_socket:sock_file {write};
+allow mtkbootanimation resourcecache_data_file:dir {search};
+allow mtkbootanimation resourcecache_data_file:file {read getattr open};
+allow mtkbootanimation surfaceflinger:fifo_file {ioctl read write getattr lock append map open};
+allow mtkbootanimation surfaceflinger_service:service_manager {find};
+allow mtkbootanimation system_file:dir {ioctl read getattr lock search open};

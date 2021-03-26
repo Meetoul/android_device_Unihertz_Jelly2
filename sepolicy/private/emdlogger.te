@@ -1,0 +1,36 @@
+type emdlogger_exec, file_type, exec_type, system_file_type;
+
+init_daemon_domain(emdlogger);
+binder_use(emdlogger);
+
+allow emdlogger sdcard_type:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow emdlogger sdcard_type:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow emdlogger platform_app:unix_stream_socket {connectto};
+allow emdlogger shell_exec:file {ioctl read getattr lock map execute execute_no_trans open};
+allow emdlogger system_file:file {execute_no_trans};
+allow emdlogger zygote_exec:file {ioctl read getattr lock map execute execute_no_trans open};
+allow emdlogger vfat:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow emdlogger vfat:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow emdlogger mnt_user_file:dir {search};
+allow emdlogger mnt_user_file:lnk_file {read};
+allow emdlogger storage_file:lnk_file {read};
+allow emdlogger mnt_media_rw_file:dir {search};
+allow emdlogger rootfs:file {ioctl read getattr lock map open};
+allow emdlogger storage_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow emdlogger tmpfs:lnk_file {read};
+allow emdlogger storage_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow emdlogger system_file:dir {read};
+allow emdlogger toolbox_exec:file {ioctl read getattr lock map execute execute_no_trans open};
+allow emdlogger media_rw_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow emdlogger media_rw_data_file:dir {ioctl read write create getattr setattr lock rename add_name remove_name reparent search rmdir open};
+allow emdlogger proc_cmdline:file {read getattr open};
+allow emdlogger sysfs_dt_firmware_android:dir {read search open};
+allow emdlogger tmpfs:dir {write};
+allow emdlogger sysfs_dt_firmware_android:file {read getattr open};
+allow emdlogger system_file:dir {open};
+allow emdlogger vendor_default_prop:file {read getattr open};
+allow emdlogger mddb_filter_data_file:dir {ioctl read getattr lock search open};
+allow emdlogger mddb_filter_data_file:file {ioctl read getattr lock map open};
+allow emdlogger debuglog_data_file:dir {ioctl read write create getattr setattr lock relabelto rename add_name remove_name reparent search rmdir open};
+allow emdlogger debuglog_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};
+allow emdlogger system_prop:file {read getattr map open};
