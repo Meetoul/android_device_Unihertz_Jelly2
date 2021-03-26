@@ -125,7 +125,7 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.3
     
 # Additional tools
-PRODUCT_PACKAGES += \
+PRODUCT_HOST_PACKAGES += \
     unpack_bootimg    
 
 # Keylayouts
