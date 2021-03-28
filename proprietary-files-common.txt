@@ -361,6 +361,11 @@ lib64/libvsync_enhance.so
 lib64/libvsync_hint.so
 lib64/libwapi_cert_jni.so
 
+#FMRadio
+-product/priv-app/FMRadio/FMRadio.apk
+product/lib/libfmjni.so
+product/lib64/libfmjni.so
+
 -framework/com.st.android.nfc_extensions.jar
 etc/init/hw/init.stnfc.rc
 etc/nfcee_access.xml
