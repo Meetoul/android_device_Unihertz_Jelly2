@@ -145,6 +145,7 @@ Add the following
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+  <remove-project name="LineageOS/android_packages_apps_FMRadio"/>
   <project name="ADeadTrousers/android_device_Unihertz_Atom_LXL" path="device/Unihertz/Atom_LXL" remote="github" revision="master" />
   <!-- For the Atom L add -->
   <project name="ADeadTrousers/android_device_Unihertz_Atom_L" path="device/Unihertz/Atom_L" remote="github" revision="master" />
