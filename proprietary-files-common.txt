@@ -365,6 +365,7 @@ lib64/libwapi_cert_jni.so
 -product/priv-app/FMRadio/FMRadio.apk
 product/lib/libfmjni.so
 product/lib64/libfmjni.so
+product/etc/permissions/product-permissions-mediatek.xml
 
 -framework/com.st.android.nfc_extensions.jar
 etc/init/hw/init.stnfc.rc
