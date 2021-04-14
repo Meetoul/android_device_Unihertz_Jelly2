@@ -1,6 +1,7 @@
 Common device configuration for the Unihertz Atom L and XL
 =================================================
 This common device tree is intended for the usage in a LineageOS or similar building environment.
+
 If you are looking for a special device tree for the usage in a TWRP or similar environment head over to https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_LXL.
 
 The Unihertz Atom L (codenamed simply _"Atom_L"_) and the Atom XL (codenamed simply _"Atom_XL"_) are two rugged small smartphones from Unihertz, released in July 2020. They are both almost identical except the Atom XL offers an integrated digital mobile radio (DMR).
@@ -9,8 +10,8 @@ The Unihertz Atom L (codenamed simply _"Atom_L"_) and the Atom XL (codenamed sim
 
 Additionally to this common device tree, you'll need one or both model device trees
 
-- [Atom L Model](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L)
-- [Atom XL Model](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL)
+- [Atom L (model)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L)
+- [Atom XL (model)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL)
 
 and one or all of the four regional device trees
 
