@@ -5,8 +5,10 @@ Every piece of software should allways kept up-to-date. Therefore even this ROM 
 
 ## (optional) Updating TWRP recovery
 
-- [Atom L Releases](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_L/releases)
-- [Atom XL Releases](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_XL/releases)
+- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_L_EEA/releases)
+- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_XL_EEA/releases)
+- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_L_TEE/releases)
+- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_XL_TEE/releases)
 
 1. Download `recovery.img` from the latest release page of your device.
 2. Connect your phone to your PC and open a terminal or a command line window.
@@ -22,8 +24,10 @@ Every piece of software should allways kept up-to-date. Therefore even this ROM 
 
 ## Updating LineageOS ROM
 
-- [Atom L Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L/releases)
-- [Atom XL Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases)
+- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_EEA/releases)
+- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_EEA/releases)
+- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_TEE/releases)
+- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_TEE/releases)
 
 1. Download `lineage-17.1-XXX-UNOFFICIAL-YYY-signed.zip` from the latest release page of your device.
 2. Connect your phone to your PC and open a terminal or a command line window.

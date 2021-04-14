@@ -8,10 +8,16 @@ Make sure unpack_bootimg is build
 ```bash
 cd ~/android/lineage
 source build/envsetup.sh
-# For the Atom L use
-breakfast Atom_L
-# For the atom XL use
-breakfast Atom_XL
+
+# For the Atom L EEA use
+breakfast Atom_L_EEA
+# For the atom XL EEA use
+breakfast Atom_XL_EEA
+# For the Atom L TEE use
+breakfast Atom_L_TEE
+# For the atom XL TEE use
+breakfast Atom_XL_TEE
+
 make unpack_bootimg
 ```
 

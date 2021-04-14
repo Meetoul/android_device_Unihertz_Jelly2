@@ -63,9 +63,6 @@ To be able to install anything on the Unihertz Atom L or XL we first need to unl
 
 To get LineageOS to boot proberly we also need to disable AVB. Otherwise the bootloader will check the ROM with the wrong authorization keys and prevent the loading.
 
-- [Atom L Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L/releases)
-- [Atom XL Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases)
-
 1. Download `vbmeta.img` from the latest release page of your device.
 2. Connect your phone to your PC and open a terminal or a command line window.
 3. Run `adb reboot bootloader` on your PC to put your device in bootloader mode.
@@ -75,8 +72,10 @@ To get LineageOS to boot proberly we also need to disable AVB. Otherwise the boo
 
 ## Installing TWRP recovery
 
-- [Atom L Releases](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_L/releases)
-- [Atom XL Releases](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_XL/releases)
+- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_L_EEA/releases)
+- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_XL_EEA/releases)
+- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_L_TEE/releases)
+- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_XL_TEE/releases)
 
 1. Download `recovery.img` from the latest release page of your device.
 2. Connect your phone to your PC and open a terminal or a command line window.
@@ -87,8 +86,10 @@ To get LineageOS to boot proberly we also need to disable AVB. Otherwise the boo
 
 ## Installing LineageOS ROM
 
-- [Atom L Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L/releases)
-- [Atom XL Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases)
+- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_EEA/releases)
+- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_EEA/releases)
+- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_TEE/releases)
+- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_TEE/releases)
 
 1. Download `lineage-17.1-XXX-UNOFFICIAL-YYY-signed.zip` from the latest release page of your device.
 2. Connect your phone to your PC and open a terminal or a command line window.

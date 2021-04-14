@@ -22,10 +22,16 @@ Make sure lpmake is build
 ```bash
 cd ~/android/lineage
 source build/envsetup.sh
-# For the Atom L use
-breakfast Atom_L
-# For the Atom XL use
-breakfast Atom_XL
+
+# For the Atom L EEA use
+breakfast Atom_L_EEA
+# For the atom XL EEA use
+breakfast Atom_XL_EEA
+# For the Atom L TEE use
+breakfast Atom_L_TEE
+# For the atom XL TEE use
+breakfast Atom_XL_TEE
+
 make lpmake
 ```
 
@@ -69,8 +75,10 @@ Create the folder `~/super` and copy `vendor.img` into it.
 
 ## Extracting image files from LineageOS rom files
 
-- [Atom L Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L/releases)
-- [Atom XL Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases)
+- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_EEA/releases)
+- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_EEA/releases)
+- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_TEE/releases)
+- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_TEE/releases)
 
 Download `lineage-17.1-XXX-UNOFFICIAL-YYY-signed.zip` from the latest release page of your device.
 Extract the files from the zip archive into `~/super`.

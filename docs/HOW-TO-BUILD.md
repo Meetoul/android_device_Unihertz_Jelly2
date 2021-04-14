@@ -147,10 +147,18 @@ Add the following
 <manifest>
   <remove-project name="LineageOS/android_packages_apps_FMRadio"/>
   <project name="ADeadTrousers/android_device_Unihertz_Atom_LXL" path="device/Unihertz/Atom_LXL" remote="github" revision="master" />
-  <!-- For the Atom L add -->
+  <!-- For the Atom L model add -->  
   <project name="ADeadTrousers/android_device_Unihertz_Atom_L" path="device/Unihertz/Atom_L" remote="github" revision="master" />
-  <!-- For the Atom XL add -->
+  <!-- For the Atom XL model add -->  
   <project name="ADeadTrousers/android_device_Unihertz_Atom_XL" path="device/Unihertz/Atom_XL" remote="github" revision="master" />
+  <!-- For the Atom L region eea add -->  
+  <project name="ADeadTrousers/android_device_Unihertz_Atom_L_EEA" path="device/Unihertz/Atom_L_EEA" remote="github" revision="master" />
+  <!-- For the Atom XL region eea add -->  
+  <project name="ADeadTrousers/android_device_Unihertz_Atom_XL_EEA" path="device/Unihertz/Atom_XL_EEA" remote="github" revision="master" />
+  <!-- For the Atom L region tee add -->  
+  <project name="ADeadTrousers/android_device_Unihertz_Atom_L_TEE" path="device/Unihertz/Atom_L_TEE" remote="github" revision="master" />
+  <!-- For the Atom XL region tee add -->  
+  <project name="ADeadTrousers/android_device_Unihertz_Atom_XL_TEE" path="device/Unihertz/Atom_XL_TEE" remote="github" revision="master" />
 </manifest>
 ```
 	
@@ -207,10 +215,14 @@ First follow [the instructions to extract and mount the stock rom files](HOW-TO-
 Then extract all the files we need
 
 ```bash
-# For the Atom L use
-~/android/lineage/device/Unihertz/Atom_L/extract-files.sh ~/unihertz/extracted
-# For the Atom XL use
-~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh ~/unihertz/extracted
+# For the Atom L EEA use
+~/android/lineage/device/Unihertz/Atom_L_EEA/extract-files.sh ~/unihertz/extracted
+# For the Atom XL EEA use
+~/android/lineage/device/Unihertz/Atom_XL_EEA/extract-files.sh ~/unihertz/extracted
+# For the Atom L TEE use
+~/android/lineage/device/Unihertz/Atom_L_TEE/extract-files.sh ~/unihertz/extracted
+# For the Atom XL TEE use
+~/android/lineage/device/Unihertz/Atom_XL_TEE/extract-files.sh ~/unihertz/extracted
 ```
 
 ### Use an allready rooted device
@@ -218,10 +230,14 @@ Then extract all the files we need
 If you were able to root your device this is just a small step. Plug in your device and do the follwing
 
 ```bash
-# For the Atom L use
-~/android/lineage/device/Unihertz/Atom_L/extract-files.sh	
-# For the Atom XL use
-~/android/lineage/device/Unihertz/Atom_XL/extract-files.sh	
+# For the Atom L EEA use
+~/android/lineage/device/Unihertz/Atom_L_EEA/extract-files.sh 
+# For the Atom XL EEA use
+~/android/lineage/device/Unihertz/Atom_XL_EEA/extract-files.sh
+# For the Atom L TEE use
+~/android/lineage/device/Unihertz/Atom_L_TEE/extract-files.sh 
+# For the Atom XL TEE use
+~/android/lineage/device/Unihertz/Atom_XL_TEE/extract-files.sh
 ```
 	
 ## Building the rom
@@ -231,10 +247,14 @@ Prepare the build
 ```bash
 cd ~/android/lineage
 source build/envsetup.sh
-# For the Atom L use
-breakfast Atom_L
-# For the Atom XL use
-breakfast Atom_XL
+# For the Atom L EEA use
+breakfast Atom_L_EEA
+# For the Atom XL EEA use
+breakfast Atom_XL_EEA
+# For the Atom L TEE use
+breakfast Atom_L_TEE
+# For the Atom XL TEE use
+breakfast Atom_XL_TEE
 ```
 	
 Do the actual build
@@ -243,10 +263,14 @@ Do the actual build
 cd ~/android/lineage
 ccache -M 50G
 croot
-# For the Atom L use
-brunch Atom_L	
-# For the Atom XL use
-brunch Atom_XL	
+# For the Atom L EEA use
+brunch Atom_L_EEA	
+# For the Atom XL EEA use
+brunch Atom_XL_EEA
+# For the Atom L TEE use
+brunch Atom_L_TEE	
+# For the Atom XL TEE use
+brunch Atom_XL_TEE
 ```
 
 ## Updating the sorces (at a later time)

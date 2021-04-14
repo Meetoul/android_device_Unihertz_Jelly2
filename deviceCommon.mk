@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_DEVICE_PATH := device/Unihertz/Atom_LXL
+DEVICE_PATH := device/Unihertz/Atom_LXL
 
 #Include GAPPS if applicable
--include $(COMMON_DEVICE_PATH)/gapps_prop.mk
+-include $(DEVICE_PATH)/gapps_prop.mk
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
@@ -46,7 +46,7 @@ PRODUCT_PACKAGES += \
 
 # fstab
 PRODUCT_COPY_FILES += \
-    $(COMMON_DEVICE_PATH)/rootdir/etc/fstab.mt6771:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6771
+    $(DEVICE_PATH)/rootdir/etc/fstab.mt6771:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6771
     
 # NFC stack (AOSP)
 PRODUCT_PACKAGES += \
@@ -126,19 +126,20 @@ PRODUCT_PACKAGES += \
     
 # Additional tools
 PRODUCT_HOST_PACKAGES += \
-    unpack_bootimg    
+    unpack_bootimg \
+    lpmake   
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(COMMON_DEVICE_PATH)/idc/mtk-kpd.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/mtk-kpd.idc \
-    $(COMMON_DEVICE_PATH)/keylayout/mtk-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-kpd.kl \
-    $(COMMON_DEVICE_PATH)/keylayout/mtk-tpd-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-tpd-kpd.kl \
-    $(COMMON_DEVICE_PATH)/keylayout/fingerprint_key.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/fingerprint_key.kl
+    $(DEVICE_PATH)/idc/mtk-kpd.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/mtk-kpd.idc \
+    $(DEVICE_PATH)/keylayout/mtk-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-kpd.kl \
+    $(DEVICE_PATH)/keylayout/mtk-tpd-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-tpd-kpd.kl \
+    $(DEVICE_PATH)/keylayout/fingerprint_key.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/fingerprint_key.kl
     
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(COMMON_DEVICE_PATH)/overlay \
-    $(COMMON_DEVICE_PATH)/overlay-lineage
+    $(DEVICE_PATH)/overlay \
+    $(DEVICE_PATH)/overlay-lineage
 
 # Overlays -- replace official
 PRODUCT_PACKAGES += \

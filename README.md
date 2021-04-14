@@ -1,14 +1,31 @@
 Common device configuration for the Unihertz Atom L and XL
 =================================================
-This Common device tree is intended for the usage in a LineageOS or similar building environment.
+This common device tree is intended for the usage in a LineageOS or similar building environment.
+If you are looking for a special device tree for the usage in a TWRP or similar environment head over to https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_LXL.
 
-The Unihertz Atom L (codenamed simply _"Atom_L"_) and the Atom XL (codenamed simply _"Atom_XL"_) are two rugged small smartphones from Unihertz, released in July 2020. They are both almost identical only the Atom XL offers an integrated amateur radio.
+The Unihertz Atom L (codenamed simply _"Atom_L"_) and the Atom XL (codenamed simply _"Atom_XL"_) are two rugged small smartphones from Unihertz, released in July 2020. They are both almost identical except the Atom XL offers an integrated digital mobile radio (DMR).
+
+# Dependencies
+
+Additionally to this common device tree, you'll need one or both model device trees
+
+- [Atom L Model](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L)
+- [Atom XL Model](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL)
+
+and one or all of the four regional device trees
+
+- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_EEA)
+- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_EEA)
+- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_TEE)
+- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_TEE)
 
 ## Releases
 
 For the actual releases head on over to the device tree of the individual devices:
-- [Atom L Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L/releases)
-- [Atom XL Releases](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL/releases)
+- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_EEA/releases)
+- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_EEA/releases)
+- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_TEE/releases)
+- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_TEE/releases)
 
 ## Documentations
 
@@ -22,4 +39,5 @@ For the actual releases head on over to the device tree of the individual device
 
 ## Special Thanks To
 
-- [PeterCxy from the XDA forum](https://forum.xda-developers.com/member.php?u=5351691) for helping me and providing the initial device tree for Atom L.
+- [PeterCxy from the XDA forum](https://forum.xda-developers.com/member.php?u=5351691) for helping me and providing the device tree for Atom L.
+- [The device tree for the Atom L](https://cgit.typeblog.net/android/device/unihertz/Atom_L/) which was a great step-by-step guide on how to setup my own device tree.
