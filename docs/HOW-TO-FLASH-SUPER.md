@@ -17,6 +17,8 @@ sudo apt install brotli
 
 ### Install lpmake
 
+#### Build lpmake yourself
+
 Make sure lpmake is build
 
 ```bash
@@ -34,6 +36,14 @@ breakfast Atom_XL_TEE
 
 make lpmake
 ```
+
+lpmake will be built in
+
+	~/android/lineage/out/host/linux-x86/bin/lpmake
+
+#### Use a precompiled OTA tools package
+
+Head on over to [xda-developers.com](https://forum.xda-developers.com/t/guide-ota-tools-lpunpack.4041843/) to download a complete OTA tools package and extract it to a folder of your choice.
 
 ### Install sdat2img.py
 
@@ -118,7 +128,7 @@ Theses sizes are a bit bigger so you are able to add additional components like 
 With these number we are now able to create the `super.img`
 
 ```bash
-~/android/lineage/out/host/linux-x86/bin/lpmake \
+./lpmake \
  --metadata-size 65536 \
  --super-name super \
  --metadata-slots 1 \
