@@ -117,3 +117,25 @@ To get LineageOS to boot proberly we also need to disable AVB. Otherwise the boo
 
 1. (Optional) At this point, you can then install the latest Magisk and/or OpenGAPPS Nano at your will. Note that the size of the system partition might only be enough for the "nano" variant of OpenGAPPS. If installing Magisk / OpenGAPPS fails, you can try rebooting into recovery again in advanced menus, then try installing them again.
 2. Select `Reboot System` to reboot into LineageOS and enjoy. Note that Magisk might cause your device to boot loop once or twice but it will eventually boot.
+
+## Troubleshooting
+
+### Partitions cannot be resized
+
+If you get an error 7 mentioning `assert failed: update_dynamic_partitions(package_extract_file("dynamic_partitions_op_list"))` you need to do the following:
+
+- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_EEA/releases/download/20210226-alpha/super.img-eea.7z)
+- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_EEA/releases/download/20201219-alpha/super.img-seea.7z)
+- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_TEE/releases/download/20210415-alpha/super.img-tee.7z)
+- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_TEE/releases/download/20210415-alpha/super.img-stee.7z)
+
+1. Download `super.img-YYY.7z` from the release page of your device which corresponds with the latest stock rom release.
+2. Extract the already resized copy of `super.img` from the downloaded archive.
+5. Run `adb push super.img /external_sd` on your PC.
+6. In TWRP select `Install`.
+7. Use `Select Storage` to switch to your SD card.
+8. Use `Install Image` to switch to image installation mode.
+9. Select `super.img` from the list.
+10. Select `Super (Product, Vendor, System)` partition.
+11. Swipe the slider on the bottom to the right to confirm.
+12. Continue with **Installing LineageOS ROM**
