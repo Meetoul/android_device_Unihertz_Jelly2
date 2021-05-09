@@ -74,8 +74,7 @@ BOARD_SUPER_PARTITION_GROUPS := main
 BOARD_MAIN_SIZE := 4829741056
 BOARD_MAIN_PARTITION_LIST := \
     product \
-    system \
-    vendor
+    system
 # Non-SAR on Android 10 means the presence of stage-1 ramdisk
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
