@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/Unihertz/Atom_LXL
+DEVICE_PATH := device/Unihertz/Jelly2
 
 #Include GAPPS if applicable
 -include $(DEVICE_PATH)/gapps_prop.mk
@@ -39,7 +39,7 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    FMRadio \
 #    libfmcust
-    
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -47,7 +47,7 @@ PRODUCT_PACKAGES += \
 # fstab
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6771:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6771
-    
+
 # NFC stack (AOSP)
 PRODUCT_PACKAGES += \
     NfcNci
@@ -55,7 +55,7 @@ PRODUCT_PACKAGES += \
 # ImsInit hack
 PRODUCT_PACKAGES += \
     ImsInit
-    
+
 # Init
 PRODUCT_PACKAGES += \
     init.mt6771.rc \
@@ -123,11 +123,11 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
     android.hardware.vibrator@1.0 \
     android.hardware.vibrator@1.3
-    
+
 # Additional tools
 PRODUCT_HOST_PACKAGES += \
     unpack_bootimg \
-    lpmake   
+    lpmake
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
@@ -135,7 +135,7 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/keylayout/mtk-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-kpd.kl \
     $(DEVICE_PATH)/keylayout/mtk-tpd-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-tpd-kpd.kl \
     $(DEVICE_PATH)/keylayout/fingerprint_key.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/fingerprint_key.kl
-    
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay \
@@ -155,5 +155,5 @@ PRODUCT_BOOT_JARS += \
     mediatek-telephony-base \
     mediatek-telephony-common
 
-#Include GAPPS if applicable 
+#Include GAPPS if applicable
 $(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)

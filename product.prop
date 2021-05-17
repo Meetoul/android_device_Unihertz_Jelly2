@@ -15,3 +15,7 @@ ro.other_notifi_ledcolor=Green
 ro.unread_notifi_ledcolor=Red
 ro.incoming_ledcolor=Blue
 ro.scridle_ledcolor=None
+
+ro.build.wifi.ssid=Jelly2
+ro.build.bluetooth.name=Jelly2
+ro.build.wifip2pDN=Jelly2
