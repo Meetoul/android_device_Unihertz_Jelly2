@@ -21,7 +21,7 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 LINEAGE_ROOT="${MY_DIR}"/../../..
 
-HELPER="${LINEAGE_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
+HELPER="${LINEAGE_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -70,4 +70,4 @@ extract "${LINEAGE_ROOT}/device/${VENDOR}/Jelly2/proprietary-files.txt" "${SRC}"
 
 COMMON_BLOB_ROOT="${LINEAGE_ROOT}/vendor/${VENDOR}/${DEVICE}/proprietary"
 
-"${LINEAGE_ROOT}/device/${VENDOR}/${DEVICE}/setup-makefiles.sh" 
+"${LINEAGE_ROOT}/device/${VENDOR}/${DEVICE}/setup-makefiles.sh"
