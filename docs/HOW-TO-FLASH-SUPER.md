@@ -1,7 +1,7 @@
 How to modify super.img and then flash it onto the device.
 =================================================
 
-For some reason I don't know of yet the install script won't be able to change the partition size inside `super.img`. 
+For some reason I don't know of yet the install script won't be able to change the partition size inside `super.img`.
 When this happens the recovery will only schon an error 7 mentioning an "assert failure" with `dynamic_partitions_op_list`.
 To overcome this problem you need to change the partiton layout manually on your computer and then flash the whole `super.img` back onto the device.
 
@@ -25,14 +25,8 @@ Make sure lpmake is build
 cd ~/android/lineage
 source build/envsetup.sh
 
-# For the Atom L EEA use
-breakfast Atom_L_EEA
-# For the atom XL EEA use
-breakfast Atom_XL_EEA
-# For the Atom L TEE use
-breakfast Atom_L_TEE
-# For the atom XL TEE use
-breakfast Atom_XL_TEE
+# For the Jelly2 TEE use
+breakfast Jelly2_TEE
 
 make lpmake
 ```
@@ -61,14 +55,14 @@ Update your PATH variable for your environment
 ```bash
 gedit ~/.profile
 ```
-	
+
 Add the following
-	
+
 ```bash
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-  PATH="$HOME/bin:$PATH"
-fi	
+    PATH="$HOME/bin:$PATH"
+fi
 ```
 
 Then update your environment
@@ -80,17 +74,14 @@ source ~/.profile
 ## Extracting image files from stock rom files
 
 Follow [the instructions to extract the stock rom files](HOW-TO-EXTRACT_FILES.md) to the point where you get `system.img`, `vendor.img` and `product.img`.
-For this guide we only need `vendor.img` because the other two files are provided from the LineageOS rom. 
+For this guide we only need `vendor.img` because the other two files are provided from the LineageOS rom.
 Create the folder `~/super` and copy `vendor.img` into it.
 
 ## Extracting image files from LineageOS rom files
 
-- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_EEA/releases)
-- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_EEA/releases)
-- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_TEE/releases)
-- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_TEE/releases)
+- [Jelly2 Region TEE (non-european union)](https://github.com/Meetoul/android_device_Unihertz_Jelly2_TEE/releases)
 
-Download `lineage-17.1-XXX-UNOFFICIAL-YYY-signed.zip` from the latest release page of your device.
+Download `lineage-17.1-XXX-UNOFFICIAL-YYY.zip` from the latest release page of your device.
 Extract the files from the zip archive into `~/super`.
 
 Then we need to extract the brotli compressed files
@@ -122,7 +113,7 @@ stat -c '%n %s' system.img
 stat -c '%n %s' product.img
 ```
 
-Alternativly you could also use the filesizes from the zip archive in `dynamic_partitions_op_list`. 
+Alternativly you could also use the filesizes from the zip archive in `dynamic_partitions_op_list`.
 Theses sizes are a bit bigger so you are able to add additional components like Gapps or Magisk later on.
 
 With these number we are now able to create the `super.img`

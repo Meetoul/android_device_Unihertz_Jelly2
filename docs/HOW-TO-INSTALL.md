@@ -1,4 +1,4 @@
-How to install LineageOS 17.1 for the Unihertz Atom L and XL
+How to install LineageOS 17.1 for the Unihertz Jelly2
 =================================================
 
 ## Getting adb and fastboot
@@ -25,14 +25,14 @@ Update your PATH variable for your environment
 ```bash
 gedit ~/.profile
 ```
-	
+
 Add the following
-	
+
 ```bash
 # add Android SDK platform tools to path
 if [ -d "$HOME/platform-tools" ] ; then
-  PATH="$HOME/platform-tools:$PATH"
-fi	
+    PATH="$HOME/platform-tools:$PATH"
+fi
 ```
 
 Then update your environment
@@ -43,13 +43,13 @@ source ~/.profile
 
 ### Windows
 
-Download [the latest version of adb and fastboot](https://dl.google.com/android/repository/platform-tools-latest-windows.zip) to a directory of your choice and extract the archive. 
+Download [the latest version of adb and fastboot](https://dl.google.com/android/repository/platform-tools-latest-windows.zip) to a directory of your choice and extract the archive.
 
 Note: I've had reports that under Windows adb/fastboot might not recognize the phone while in TWRP. For now I don't know whats causing this. So if that happends to you try using linux instead.
 
 ## Unlocking
 
-To be able to install anything on the Unihertz Atom L or XL we first need to unlock the bootloader.
+To be able to install anything on the Unihertz Jelly2 we first need to unlock the bootloader.
 
 1. Boot your device into the official OS.
 2. Go to `Settings > About phone`, tap the "build number" several times to enable developer settings.
@@ -72,10 +72,7 @@ To get LineageOS to boot proberly we also need to disable AVB. Otherwise the boo
 
 ## Installing TWRP recovery
 
-- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_L_EEA/releases)
-- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_XL_EEA/releases)
-- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_L_TEE/releases)
-- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/twrp_device_Unihertz_Atom_XL_TEE/releases)
+- [Jelly2 Region TEE (non-european union)](https://github.com/Meetoul/twrp_device_Unihertz_Jelly2_TEE/releases)
 
 1. Download `recovery.img` from the latest release page of your device.
 2. Connect your phone to your PC and open a terminal or a command line window.
@@ -86,16 +83,13 @@ To get LineageOS to boot proberly we also need to disable AVB. Otherwise the boo
 
 ## Installing LineageOS ROM
 
-- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_EEA/releases)
-- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_EEA/releases)
-- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_TEE/releases)
-- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_TEE/releases)
+- [Jelly2 Region TEE (non-european union)](https://github.com/Meetoul/android_device_Unihertz_Jelly2_TEE/releases)
 
-1. Download `lineage-17.1-XXX-UNOFFICIAL-YYY-signed.zip` from the latest release page of your device.
+1. Download `lineage-17.1-XXX-UNOFFICIAL-YYY.zip` from the latest release page of your device.
 2. Connect your phone to your PC and open a terminal or a command line window.
 3. Run `adb reboot recovery` on your PC or simply hold volume up while turning power on to boot your device into the recovery.
 4. In TWRP select `Wipe > Advanced Wipe`.
-5. Tick `Dalvik / ART Cache`, `Cache`, `Data`, `Internal Storage`. 
+5. Tick `Dalvik / ART Cache`, `Cache`, `Data`, `Internal Storage`.
 6. Swipe the slider on the bottom to the right to confirm. (**THIS WILL WIPE ALL DATA!**)
 
 ### Using sideload method
@@ -117,25 +111,3 @@ To get LineageOS to boot proberly we also need to disable AVB. Otherwise the boo
 
 1. (Optional) At this point, you can then install the latest Magisk and/or OpenGAPPS Nano at your will. Note that the size of the system partition might only be enough for the "nano" variant of OpenGAPPS. If installing Magisk / OpenGAPPS fails, you can try rebooting into recovery again in advanced menus, then try installing them again.
 2. Select `Reboot System` to reboot into LineageOS and enjoy. Note that Magisk might cause your device to boot loop once or twice but it will eventually boot.
-
-## Troubleshooting
-
-### Partitions cannot be resized
-
-If you get an error 7 mentioning `assert failed: update_dynamic_partitions(package_extract_file("dynamic_partitions_op_list"))` you need to do the following:
-
-- [Atom L Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_EEA/releases/download/20210226-alpha/super.img-eea.7z)
-- [Atom XL Region EEA (european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_EEA/releases/download/20201219-alpha/super.img-seea.7z)
-- [Atom L Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_L_TEE/releases/download/20210415-alpha/super.img-tee.7z)
-- [Atom XL Region TEE (non-european union)](https://github.com/ADeadTrousers/android_device_Unihertz_Atom_XL_TEE/releases/download/20210415-alpha/super.img-stee.7z)
-
-1. Download `super.img-YYY.7z` from the release page of your device which corresponds with the latest stock rom release.
-2. Extract the already resized copy of `super.img` from the downloaded archive.
-5. Run `adb push super.img /external_sd` on your PC.
-6. In TWRP select `Install`.
-7. Use `Select Storage` to switch to your SD card.
-8. Use `Install Image` to switch to image installation mode.
-9. Select `super.img` from the list.
-10. Select `Super (Product, Vendor, System)` partition.
-11. Swipe the slider on the bottom to the right to confirm.
-12. Continue with **Installing LineageOS ROM**

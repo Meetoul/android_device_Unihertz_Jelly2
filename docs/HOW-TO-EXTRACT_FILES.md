@@ -1,4 +1,4 @@
-How to extract informations from the Unihertz Atom L and XL
+How to extract informations from the Unihertz Jelly2
 =================================================
 
 ## Installing needed utilities
@@ -13,14 +13,8 @@ Make sure unpack_bootimg is build
 cd ~/android/lineage
 source build/envsetup.sh
 
-# For the Atom L EEA use
-breakfast Atom_L_EEA
-# For the atom XL EEA use
-breakfast Atom_XL_EEA
-# For the Atom L TEE use
-breakfast Atom_L_TEE
-# For the atom XL TEE use
-breakfast Atom_XL_TEE
+# For the Jelly2 TEE use
+breakfast Jelly2_TEE
 
 make unpack_bootimg
 ```
@@ -42,7 +36,7 @@ mkdir -p ~/bin
 wget http://newandroidbook.com/tools/imjtool.tgz
 tar -xzf imjtool.tgz -C ~/bin
 ```
-   
+
 ## How-To to extract boot.img and recovery.img
 
 Use unpack_bootimg extract all required infos from boot.img and recovery.img of the stock rom
@@ -66,7 +60,7 @@ rm -rf extracted/
 imjtool super.img extract
 imjtool extracted/image.img extract
 ```
-	
+
 Next we need to mount them into the filesystem
 
 ```bash
@@ -80,9 +74,9 @@ sudo mount -o loop product.img system/product
 Now you can browse your phones filesystem and extract everything you need
 
 To cleanup just unmout the images
-	
+
 ```bash
-sudo umount ~/unihertz/extracted/system/product	
-sudo umount ~/unihertz/extracted/system/vendor	
+sudo umount ~/unihertz/extracted/system/product
+sudo umount ~/unihertz/extracted/system/vendo
 sudo umount ~/unihertz/extracted/system
 ```

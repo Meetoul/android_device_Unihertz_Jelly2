@@ -1,4 +1,4 @@
-How to build LineageOS 17.1 for the Unihertz Atom L and XL
+How to build LineageOS 17.1 for the Unihertz Jelly2
 =================================================
 
 This guide is focused on building the ROM under a Linux host environment.
@@ -20,7 +20,7 @@ sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-
 For Ubuntu versions older than 16.04 (xenial), you’ll need
 
 ```bash
-sudo apt-get install libwxgtk2.8-dev	
+sudo apt-get install libwxgtk2.8-dev
 ```
 
 For Ubuntu versions older than 20.04 (focal), you’ll also need
@@ -43,14 +43,14 @@ Update your PATH variable for your environment
 ```bash
 gedit ~/.profile
 ```
-	
+
 Add the following
-	
+
 ```bash
 # add Android SDK platform tools to path
 if [ -d "$HOME/platform-tools" ] ; then
-  PATH="$HOME/platform-tools:$PATH"
-fi	
+    PATH="$HOME/platform-tools:$PATH"
+fi
 ```
 
 Then update your environment
@@ -58,7 +58,7 @@ Then update your environment
 ```bash
 source ~/.profile
 ```
-	
+
 ### Install the repo command
 
 Download the binary and make it executable
@@ -68,20 +68,20 @@ mkdir -p ~/bin
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 chmod a+x ~/bin/repo
 ```
-	
+
 Update your PATH variable for your environment
 
 ```bash
 gedit ~/.profile
 ```
-	
+
 Add the following
-	
+
 ```bash
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-  PATH="$HOME/bin:$PATH"
-fi	
+    PATH="$HOME/bin:$PATH"
+fi
 ```
 
 Then update your environment
@@ -89,7 +89,7 @@ Then update your environment
 ```bash
 source ~/.profile
 ```
-	
+
 ### (optional) Install git-lfs for GAPPS support during build
 
 If you want to include GAPPS in the build you need [git-lfs](https://git-lfs.github.com/) otherwise the apk's can't be downloaded.
@@ -98,7 +98,7 @@ If you want to include GAPPS in the build you need [git-lfs](https://git-lfs.git
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt-get install git-lfs
 ```
-	
+
 ### Configure git
 
 repo requires you to identify yourself to sync Android
@@ -107,23 +107,23 @@ repo requires you to identify yourself to sync Android
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
 ```
-	
+
 ### (optional) Turn on caching to speed up build
 
 Update your build environment
 
 ```bash
-gedit ~/.bashrc	
+gedit ~/.bashrc
 ```
 
 Add the following
-	
+
 ```bash
 export USE_CCACHE=1
 export CCACHE_EXEC=/usr/bin/ccache
 export CCACHE_COMPRESS=1
 ```
-	
+
 ### Initialize the LineageOS source repository
 
 Create the project folder and download the source code
@@ -133,35 +133,25 @@ mkdir -p ~/android/lineage
 cd ~/android/lineage
 repo init -u https://github.com/LineageOS/android.git -b lineage-17.1
 ```
-	
+
 Now let's add this very device repo to the local_manifest
 
 ```bash
 gedit cd ~/android/lineage/.repo/local_manifests/roomservice.xml
 ```
-	
+
 Add the following
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remove-project name="LineageOS/android_packages_apps_FMRadio"/>
-  <project name="ADeadTrousers/android_device_Unihertz_Atom_LXL" path="device/Unihertz/Atom_LXL" remote="github" revision="master" />
-  <!-- For the Atom L model add -->  
-  <project name="ADeadTrousers/android_device_Unihertz_Atom_L" path="device/Unihertz/Atom_L" remote="github" revision="master" />
-  <!-- For the Atom XL model add -->  
-  <project name="ADeadTrousers/android_device_Unihertz_Atom_XL" path="device/Unihertz/Atom_XL" remote="github" revision="master" />
-  <!-- For the Atom L region eea add -->  
-  <project name="ADeadTrousers/android_device_Unihertz_Atom_L_EEA" path="device/Unihertz/Atom_L_EEA" remote="github" revision="master" />
-  <!-- For the Atom XL region eea add -->  
-  <project name="ADeadTrousers/android_device_Unihertz_Atom_XL_EEA" path="device/Unihertz/Atom_XL_EEA" remote="github" revision="master" />
-  <!-- For the Atom L region tee add -->  
-  <project name="ADeadTrousers/android_device_Unihertz_Atom_L_TEE" path="device/Unihertz/Atom_L_TEE" remote="github" revision="master" />
-  <!-- For the Atom XL region tee add -->  
-  <project name="ADeadTrousers/android_device_Unihertz_Atom_XL_TEE" path="device/Unihertz/Atom_XL_TEE" remote="github" revision="master" />
+
+  <project name="Meetoul/android_device_Unihertz_Jelly2" path="device/Unihertz/Jelly2" remote="github" revision="master" />
+  <project name="Meetoul/android_device_Unihertz_Jelly2_TEE" path="device/Unihertz/Jelly2_TEE" remote="github" revision="master" />
 </manifest>
 ```
-	
+
 If you want to build with GAPPS included add the following to the manifest-tag
 
 ```xml
@@ -181,7 +171,7 @@ If you want to build with Magisk included add the following to the manifest-tag
 ```xml
   <project name="ADeadTrousers/android_vendor_magisk" path="vendor/magisk" remote="github" revision="master" />
 ```
-	
+
 To finish everything up sync the repo
 
 ```bash
@@ -201,7 +191,7 @@ for d in ./*/ ; do (cd "$d" && git lfs pull); done
 If you don't want to include GAPPS at all or want to change the apps to be installed
 
 ```bash
-	gedit ~/android/lineage/device/Unihertz/Atom_LXL/gapps_prop.mk
+	gedit ~/android/lineage/device/Unihertz/Jelly2/gapps_prop.mk
 ```
 
 [Documentation of the possible settings](https://github.com/opengapps/aosp_build/blob/master/README.md)
@@ -210,19 +200,13 @@ If you don't want to include GAPPS at all or want to change the apps to be insta
 
 ### Use imjtool (formerly known as imgtool) to extract from stock rom files
 
-First follow [the instructions to extract and mount the stock rom files](HOW-TO-EXTRACT_FILES.md) 
+First follow [the instructions to extract and mount the stock rom files](HOW-TO-EXTRACT_FILES.md)
 
 Then extract all the files we need
 
 ```bash
-# For the Atom L EEA use
-~/android/lineage/device/Unihertz/Atom_L_EEA/extract-files.sh ~/unihertz/extracted
-# For the Atom XL EEA use
-~/android/lineage/device/Unihertz/Atom_XL_EEA/extract-files.sh ~/unihertz/extracted
-# For the Atom L TEE use
-~/android/lineage/device/Unihertz/Atom_L_TEE/extract-files.sh ~/unihertz/extracted
-# For the Atom XL TEE use
-~/android/lineage/device/Unihertz/Atom_XL_TEE/extract-files.sh ~/unihertz/extracted
+# For the Jelly2 TEE use
+~/android/lineage/device/Unihertz/Jelly2_TEE/extract-files.sh ~/unihertz/extracted
 ```
 
 ### Use an allready rooted device
@@ -230,47 +214,29 @@ Then extract all the files we need
 If you were able to root your device this is just a small step. Plug in your device and do the follwing
 
 ```bash
-# For the Atom L EEA use
-~/android/lineage/device/Unihertz/Atom_L_EEA/extract-files.sh 
-# For the Atom XL EEA use
-~/android/lineage/device/Unihertz/Atom_XL_EEA/extract-files.sh
-# For the Atom L TEE use
-~/android/lineage/device/Unihertz/Atom_L_TEE/extract-files.sh 
-# For the Atom XL TEE use
-~/android/lineage/device/Unihertz/Atom_XL_TEE/extract-files.sh
+# For the Jelly2 TEE use
+~/android/lineage/device/Unihertz/Jelly2_TEE/extract-files.sh
 ```
-	
+
 ## Building the rom
 
-Prepare the build	
+Prepare the build
 
 ```bash
 cd ~/android/lineage
 source build/envsetup.sh
-# For the Atom L EEA use
-breakfast Atom_L_EEA
-# For the Atom XL EEA use
-breakfast Atom_XL_EEA
-# For the Atom L TEE use
-breakfast Atom_L_TEE
-# For the Atom XL TEE use
-breakfast Atom_XL_TEE
+# For the Jelly2 TEE use
+breakfast Jelly2_TEE
 ```
-	
+
 Do the actual build
-	
+
 ```bash
 cd ~/android/lineage
 ccache -M 50G
 croot
-# For the Atom L EEA use
-brunch Atom_L_EEA	
-# For the Atom XL EEA use
-brunch Atom_XL_EEA
-# For the Atom L TEE use
-brunch Atom_L_TEE	
-# For the Atom XL TEE use
-brunch Atom_XL_TEE
+# For the Jelly2 TEE use
+brunch Jelly2_TEE
 ```
 
 ## Updating the sorces (at a later time)
