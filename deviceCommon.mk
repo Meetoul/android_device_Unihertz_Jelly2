@@ -144,6 +144,9 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     FrameworkResOverlay
 
+
+PRODUCT_EXTRA_VNDK_VERSIONS := 29
+
 # Telephony Jars
 PRODUCT_BOOT_JARS += \
     mediatek-common \
