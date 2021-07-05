@@ -1,7 +1,0 @@
-allow netdomain node_type:tcp_socket {node_bind};
-allow netdomain node_type:udp_socket {node_bind};
-allow netdomain port_type:tcp_socket {name_bind};
-allow netdomain port_type:udp_socket {name_bind};
-allow netdomain self:netlink_route_socket {read create bind nlmsg_read};
-allow netdomain self:tcp_socket {ioctl read write create getattr setattr lock relabelfrom relabelto append map bind connect listen accept getopt setopt shutdown recvfrom sendto name_bind node_bind name_connect};
-allow netdomain self:udp_socket {ioctl read write create getattr setattr lock relabelfrom relabelto append map bind connect listen accept getopt setopt shutdown recvfrom sendto name_bind node_bind};

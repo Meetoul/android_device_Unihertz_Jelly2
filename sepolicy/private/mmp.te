@@ -1,4 +1,0 @@
-type mmp, domain, coredomain;
-type mmp_exec, file_type, exec_type, system_file_type;
-
-init_daemon_domain(mmp);

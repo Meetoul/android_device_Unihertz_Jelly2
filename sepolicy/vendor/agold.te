@@ -1,3 +1,0 @@
-type proc_agold, fs_type, proc_type;
-type sysfs_agold, fs_type, sysfs_type;
-type agold_service, system_server_service, service_manager_type;

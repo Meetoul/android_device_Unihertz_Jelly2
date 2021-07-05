@@ -1,4 +1,0 @@
-allow init vendor_bip_socket:sock_file {write create unlink};
-allow init wfca_socket:sock_file {write create unlink};
-allow init volte_imsa2_socket:sock_file {write create unlink};
-allow init volte_ut_socket:sock_file {write create unlink};

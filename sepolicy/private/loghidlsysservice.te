@@ -1,6 +1,0 @@
-type loghidlsysservice_exec, file_type, exec_type, system_file_type;
-
-init_daemon_domain(loghidlsysservice);
-
-allow loghidlsysservice emdlogger:unix_stream_socket {connectto};
-allow loghidlsysservice mobile_log_d:unix_stream_socket {connectto};

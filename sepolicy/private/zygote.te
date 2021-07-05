@@ -1,1 +1,0 @@
-allow zygote mtk_rsc_sys_prop:file {read getattr map open};

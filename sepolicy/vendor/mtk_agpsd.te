@@ -1,7 +1,0 @@
-type mtk_agpsd, domain, netdomain, halclientdomain, mtk_hal_apm_client;
-type mtk_agpsd_exec, file_type, exec_type, vendor_file_type;
-
-init_daemon_domain(mtk_agpsd);
-binder_call(mtk_agpsd,system_suspend_server)
-
-allow mtk_agpsd system_suspend_hwservice:hwservice_manager {find};

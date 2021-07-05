@@ -1,9 +1,0 @@
-type mnld, domain, mlstrustedsubject, netdomain;
-type mnld_exec, file_type, exec_type, vendor_file_type;
-
-init_daemon_domain(mnld);
-
-allow mnld sysfs_dt_firmware_android:dir {read search open};
-allow mnld sysfs_dt_firmware_android:file {read getattr open};
-allow mnld proc_cmdline:file {ioctl read getattr lock map open};
-allow mnld metadata_file:dir {search};

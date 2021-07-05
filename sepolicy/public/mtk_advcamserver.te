@@ -1,2 +1,0 @@
-type mtk_advcamserver, domain, binderservicedomain, coredomain;
-type mtk_advcamserver_service, service_manager_type;

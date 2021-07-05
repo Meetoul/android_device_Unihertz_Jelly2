@@ -1,2 +1,0 @@
-type tee_service, service_manager_type;
-type teeregistry_service, service_manager_type;

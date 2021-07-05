@@ -1,6 +1,0 @@
-type aee_aedv, domain, mlstrustedsubject, halclientdomain, hal_camera_client;
-type aee_aedv_exec, file_type, exec_type, vendor_file_type;
-
-init_daemon_domain(aee_aedv);
-
-allow aee_aedv proc_ppm:dir {search};

@@ -1,1 +1,0 @@
-allow surfaceflinger file_contexts_file:file {ioctl read getattr lock map open};

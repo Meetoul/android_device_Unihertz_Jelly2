@@ -1,9 +1,0 @@
-type usp_service_exec, file_type, exec_type, system_file_type;
-
-init_daemon_domain(usp_service);
-
-allow usp_service block_device:dir {search};
-allow usp_service property_socket:sock_file {write};
-allow usp_service init:unix_stream_socket {connectto};
-allow usp_service radio_prop:property_service {set};
-allow usp_service radio_prop:file {read getattr map open};

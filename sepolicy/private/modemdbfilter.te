@@ -1,6 +1,0 @@
-type modemdbfilter_client_exec, file_type, exec_type, system_file_type;
-
-init_daemon_domain(modemdbfilter_client);
-
-allow modemdbfilter_client mddb_filter_data_file:dir {ioctl read write create getattr setattr lock relabelto rename add_name remove_name reparent search rmdir open};
-allow modemdbfilter_client mddb_filter_data_file:file {ioctl read write create getattr setattr lock append map unlink rename open};

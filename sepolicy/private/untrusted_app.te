@@ -1,6 +1,0 @@
-allow untrusted_app mtk_connmetrics_service:service_manager {find};
-
-allow untrusted_app_all netflix_bsp_rev_prop:file {read getattr map open};
-allow untrusted_app_all mtk_radio_service:service_manager {find};
-allow untrusted_app mtk_connmetrics_service:service_manager {find};
-dontaudit untrusted_app_all system_data_file:dir {write};

@@ -1,4 +1,0 @@
-allow vendor_init terservice_prop:file {read getattr map open};
-allow vendor_init terservice_prop:property_service {set};
-allow vendor_init netflix_bsp_rev_prop:file {read getattr map open};
-allow vendor_init netflix_bsp_rev_prop:property_service {set};

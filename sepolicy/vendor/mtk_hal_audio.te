@@ -1,8 +1,0 @@
-type mtk_hal_audio, domain, halserverdomain, halclientdomain, hal_allocator_client, hal_audio, hal_audio_server;
-type mtk_hal_audio_exec, file_type, exec_type, vendor_file_type;
-
-init_daemon_domain(mtk_hal_audio);
-
-allow mtk_hal_audio sysfs_dt_firmware_android:dir {read search open};
-allow mtk_hal_audio sysfs_dt_firmware_android:file {read getattr open};
-allow mtk_hal_audio metadata_file:dir {search};

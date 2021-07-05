@@ -1,5 +1,0 @@
-typeattribute sdcardd mlstrustedsubject;
-
-allow sdcardd untrusted_app:fd {use};
-allow sdcardd platform_app:fd {use};
-allow sdcardd sdcardfs:dir {mounton};

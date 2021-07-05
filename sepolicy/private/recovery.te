@@ -1,3 +1,0 @@
-allow recovery mtd_device:dir {search};
-allow recovery mtd_device:chr_file {ioctl read write getattr open};
-allow recovery self:capability {sys_resource};

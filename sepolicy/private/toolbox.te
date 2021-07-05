@@ -1,1 +1,0 @@
-allow toolbox system_data_file:file {getattr unlink};

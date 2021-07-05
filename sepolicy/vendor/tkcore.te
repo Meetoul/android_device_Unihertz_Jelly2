@@ -1,8 +1,0 @@
-type tkcore, domain;
-type tkcore_exec, file_type, exec_type, vendor_file_type;
-type tkcore_systa_file, file_type, vendor_file_type;
-
-init_daemon_domain(tkcore);
-
-allow tkcore tkcore_systa_file:dir {ioctl read getattr lock search open};
-allow tkcore tkcore_systa_file:file {ioctl read getattr lock map open};

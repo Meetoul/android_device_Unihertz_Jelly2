@@ -1,2 +1,0 @@
-# Adapted from the "recovery_only" macro
-define(`system_only', ifelse(target_recovery, `true', , $1))

@@ -1,2 +1,0 @@
-allow netd extmodule:fd {use};
-allow netd extmodule:tcp_socket {read write getopt setopt};

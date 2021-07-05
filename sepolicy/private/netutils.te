@@ -1,1 +1,0 @@
-allow netutils_wrapper netd:binder {call transfer};

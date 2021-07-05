@@ -1,2 +1,0 @@
-allow drmserver mtk_cta_set_prop:file {read getattr map open};
-allow drmserver access_sys_file:file {read open};

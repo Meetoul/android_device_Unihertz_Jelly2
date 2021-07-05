@@ -1,5 +1,0 @@
-typeattribute priv_app halclientdomain;
-typeattribute priv_app hal_gpu_client;
-
-allow priv_app mtk_cta_set_prop:file {read getattr map open};
-dontaudit priv_app system_data_file:dir {write};
