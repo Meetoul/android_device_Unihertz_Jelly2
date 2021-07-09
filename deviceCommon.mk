@@ -34,6 +34,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NfcNci
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(DEVICE_PATH)/overlay \
+    $(DEVICE_PATH)/overlay-lineage
+
 # fstab
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/fstab.mt6771:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6771
