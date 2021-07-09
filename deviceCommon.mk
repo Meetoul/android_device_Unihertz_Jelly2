@@ -39,6 +39,10 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(DEVICE_PATH)/overlay \
     $(DEVICE_PATH)/overlay-lineage
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/keylayout/mtk-kpd.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/mtk-kpd.kl
+
 # fstab
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/fstab.mt6771:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6771
