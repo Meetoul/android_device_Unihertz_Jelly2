@@ -1,4 +1,4 @@
-Csommon device configuration for the Unihertz Jelly2
+Common device configuration for the Unihertz Jelly2
 =================================================
 This common device tree is intended for the usage in a LineageOS or similar building environment.
 
